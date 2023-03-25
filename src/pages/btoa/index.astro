@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+    <h2>btoa</h2>
+    <textarea
+        oninput="try { document.getElementById('btoa-output').value = btoa(this.value); document.getElementById('error').textContent = '' } catch (e) { document.getElementById('error').textContent = e }"
+    ></textarea>
+    <textarea id="btoa-output"></textarea>
+
+    <h2>atob</h2>
+    <textarea
+        oninput="try { document.getElementById('atob-output').value = atob(this.value); document.getElementById('error').textContent = '' } catch (e) { document.getElementById('error').textContent = e }"
+    ></textarea>
+    <textarea id="atob-output"></textarea>
+
+    <div id="error"></div>
+</BaseLayout>

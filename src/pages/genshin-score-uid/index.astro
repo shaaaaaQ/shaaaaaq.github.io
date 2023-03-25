@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+    攻撃%のみ対応
+    <input id="u" placeholder="UID" />
+    <button id="f">fetch</button>
+    <div id="m"></div>
+    <script is:inline>
+        // https://api.enka.network
+        (async () => {
+            const equipType = {
+                EQUIP_BRACER: "花",
+                EQUIP_NECKLACE: "羽",
+                EQUIP_SHOES: "時計",
+                EQUIP_RING: "杯",
+                EQUIP_DRESS: "冠",
+            };
+            const characters = await (async () => {
+                const res = await fetch(
+                    "https://raw.githubusercontent.com/EnkaNetwork/API-docs/master/store/characters.json"
+                );
+                return res.json();
+            })();
+            const loc = await (async () => {
+                const res = await fetch(
+                    "https://raw.githubusercontent.com/EnkaNetwork/API-docs/master/store/loc.json"
+                );
+                return res.json();
+            })();
+            async function getcharacterName(avatarId) {
+                const nameTextMapHash = characters[avatarId]["NameTextMapHash"];
+                return loc["ja"][nameTextMapHash];
+            }
+            document.getElementById("f").addEventListener("click", async () => {
+                const uid = document.getElementById("u").value;
+                const res = await fetch(`https://enka.network/api/uid/${uid}`);
+                const data = await res.json();
+
+                const m = document.getElementById("m");
+
+                while (m.firstChild) {
+                    m.removeChild(m.firstChild);
+                }
+
+                const playerName = document.createElement("h3");
+                playerName.textContent = data.playerInfo.nickname;
+                m.appendChild(playerName);
+
+                data.avatarInfoList.forEach(async (avatar) => {
+                    console.log(avatar);
+
+                    const table = document.createElement("table");
+                    m.appendChild(table);
+
+                    table.insertAdjacentHTML(
+                        "afterbegin",
+                        `<thead><tr><th colspan="2">${await getcharacterName(
+                            avatar.avatarId
+                        )}</th></tr></thead>`
+                    );
+
+                    table.insertAdjacentHTML(
+                        "beforeend",
+                        `<tbody>${(() => {
+                            /*
+                        FIGHT_PROP_CRITICAL 会心率
+                        FIGHT_PROP_CRITICAL_HURT 会心ダメージ
+                        FIGHT_PROP_ATTACK_PERCENT 攻撃%
+                        */
+                            let s = "";
+                            let total = 0;
+                            avatar.equipList.forEach((item) => {
+                                if (item.weapon) return;
+                                let sc = 0;
+                                item.flat.reliquarySubstats.forEach((stat) => {
+                                    switch (stat.appendPropId) {
+                                        case "FIGHT_PROP_CRITICAL": {
+                                            sc += stat.statValue * 2;
+                                            break;
+                                        }
+                                        case "FIGHT_PROP_CRITICAL_HURT":
+                                        case "FIGHT_PROP_ATTACK_PERCENT": {
+                                            sc += stat.statValue;
+                                        }
+                                    }
+                                });
+                                sc = Math.round(sc * 10) / 10;
+                                total += sc;
+                                s += `<tr><td>${
+                                    equipType[item.flat.equipType]
+                                }</td><td>${sc}</td></tr>`;
+                            });
+                            total = Math.round(total * 10) / 10;
+                            s += `<tr><td>Total</td><td>${total}</td></tr>`;
+                            return s;
+                        })()}</tbody>`
+                    );
+                });
+            });
+        })();
+    </script>
+</BaseLayout>
