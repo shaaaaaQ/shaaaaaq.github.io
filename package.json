@@ -12,6 +12,8 @@
   "author": "shaaaaaQ",
   "license": "MIT",
   "dependencies": {
-    "astro": "^2.1.7"
+    "@astrojs/svelte": "^2.1.0",
+    "astro": "^2.1.7",
+    "svelte": "^3.57.0"
   }
 }
