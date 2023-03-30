@@ -1,15 +1,11 @@
 <script>
+    import { Tooltip } from "@svelte-plugins/tooltips";
+    import Artifact from "./Artifact.svelte";
     import characters from "./characters.js";
     import loc from "./loc.js";
+    import { equipType } from "./constants.js";
 
     export let avatarInfo;
-    const equipType = {
-        EQUIP_BRACER: "花",
-        EQUIP_NECKLACE: "羽",
-        EQUIP_SHOES: "時計",
-        EQUIP_RING: "杯",
-        EQUIP_DRESS: "冠",
-    };
     const artifacts = [];
     const total = {
         crit: 0,
@@ -52,7 +48,10 @@
             score.atk = Math.round(score.atk * 10) / 10;
             score.hp = Math.round(score.hp * 10) / 10;
             artifacts.push({
-                type: equipType[equip.flat.equipType],
+                type: equip.flat.equipType,
+                setName: loc["ja"][equip.flat.setNameTextMapHash],
+                mainStat: equip.flat.reliquaryMainstat,
+                subStats: equip.flat.reliquarySubstats,
                 score,
             });
             total.crit += score.crit;
@@ -66,33 +65,90 @@
 </script>
 
 <table>
+    <caption>
+        {loc["ja"][characters[avatarInfo.avatarId]["NameTextMapHash"]]}
+    </caption>
     <thead>
         <tr>
-            <th colspan="4">
-                {loc["ja"][characters[avatarInfo.avatarId]["NameTextMapHash"]]}
-            </th>
+            <th />
+            <th>会心</th>
+            <th>攻撃力</th>
+            <th>HP</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td />
-            <td>会心</td>
-            <td>攻撃力</td>
-            <td>HP</td>
-        </tr>
         {#each artifacts as artifact}
             <tr>
-                <td>{artifact.type}</td>
-                <td>{artifact.score.crit}</td>
-                <td>{artifact.score.atk}</td>
-                <td>{artifact.score.hp}</td>
+                <th
+                    ><Tooltip
+                        content={{
+                            component: Artifact,
+                            props: { artifact, highlights: [] },
+                        }}>{equipType[artifact.type]}</Tooltip
+                    ></th
+                >
+                <td
+                    ><Tooltip
+                        content={{
+                            component: Artifact,
+                            props: {
+                                artifact,
+                                highlights: [
+                                    "FIGHT_PROP_CRITICAL",
+                                    "FIGHT_PROP_CRITICAL_HURT",
+                                ],
+                            },
+                        }}>{artifact.score.crit}</Tooltip
+                    ></td
+                >
+                <td
+                    ><Tooltip
+                        content={{
+                            component: Artifact,
+                            props: {
+                                artifact,
+                                highlights: [
+                                    "FIGHT_PROP_CRITICAL",
+                                    "FIGHT_PROP_CRITICAL_HURT",
+                                    "FIGHT_PROP_ATTACK_PERCENT",
+                                ],
+                            },
+                        }}>{artifact.score.atk}</Tooltip
+                    ></td
+                >
+                <td
+                    ><Tooltip
+                        content={{
+                            component: Artifact,
+                            props: {
+                                artifact,
+                                highlights: [
+                                    "FIGHT_PROP_CRITICAL",
+                                    "FIGHT_PROP_CRITICAL_HURT",
+                                    "FIGHT_PROP_HP_PERCENT",
+                                ],
+                            },
+                        }}>{artifact.score.hp}</Tooltip
+                    ></td
+                >
             </tr>
         {/each}
+    </tbody>
+    <tfoot>
         <tr>
-            <td> Total </td>
+            <th> Total </th>
             <td>{total.crit}</td>
             <td>{total.atk}</td>
             <td>{total.hp}</td>
         </tr>
-    </tbody>
+    </tfoot>
 </table>
+
+<style>
+    :global(.tooltip) {
+        pointer-events: none;
+    }
+    table {
+        overflow-x: visible;
+    }
+</style>

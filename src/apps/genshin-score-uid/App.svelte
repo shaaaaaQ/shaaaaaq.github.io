@@ -15,6 +15,7 @@
 会心: 会心率 * 2 + 会心ダメージ<br />
 攻撃力: 会心率 * 2 + 会心ダメージ + 攻撃力%<br />
 HP: 会心率 * 2 + 会心ダメージ + HP%<br />
+防御とかは知らん
 <input bind:value={uid} placeholder="UID" />
 <button on:click={handleClick}>fetch</button>
 {#if playerInfo}
