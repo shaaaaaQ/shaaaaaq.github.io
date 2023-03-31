@@ -23,3 +23,17 @@ export const perStats = [
     'FIGHT_PROP_ROCK_ADD_HURT',
     'FIGHT_PROP_GRASS_ADD_HURT'
 ]
+
+export const hl = {
+    crit: ["FIGHT_PROP_CRITICAL", "FIGHT_PROP_CRITICAL_HURT"],
+    atk: [
+        "FIGHT_PROP_CRITICAL",
+        "FIGHT_PROP_CRITICAL_HURT",
+        "FIGHT_PROP_ATTACK_PERCENT",
+    ],
+    hp: [
+        "FIGHT_PROP_CRITICAL",
+        "FIGHT_PROP_CRITICAL_HURT",
+        "FIGHT_PROP_HP_PERCENT",
+    ],
+};

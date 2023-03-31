@@ -3,22 +3,9 @@
     import Artifact from "./Artifact.svelte";
     import characters from "./characters.js";
     import loc from "./loc.js";
-    import { equipType } from "./constants.js";
+    import { equipType, hl } from "./constants.js";
 
     export let avatarInfo;
-    const hl = {
-        crit: ["FIGHT_PROP_CRITICAL", "FIGHT_PROP_CRITICAL_HURT"],
-        atk: [
-            "FIGHT_PROP_CRITICAL",
-            "FIGHT_PROP_CRITICAL_HURT",
-            "FIGHT_PROP_ATTACK_PERCENT",
-        ],
-        hp: [
-            "FIGHT_PROP_CRITICAL",
-            "FIGHT_PROP_CRITICAL_HURT",
-            "FIGHT_PROP_HP_PERCENT",
-        ],
-    };
     const artifacts = [];
     const total = {
         crit: 0,
@@ -94,33 +81,44 @@
             <tr>
                 <th
                     use:tooltip={{
-                        content: { component: Artifact, props: { artifact } },
-                    }}>{equipType[artifact.type]}</th
+                        content: {
+                            component: Artifact,
+                            props: { artifact },
+                        },
+                    }}
                 >
+                    {equipType[artifact.type]}
+                </th>
                 <td
                     use:tooltip={{
                         content: {
                             component: Artifact,
                             props: { artifact, highlights: hl.crit },
                         },
-                    }}>{artifact.score.crit}</td
+                    }}
                 >
+                    {artifact.score.crit}
+                </td>
                 <td
                     use:tooltip={{
                         content: {
                             component: Artifact,
                             props: { artifact, highlights: hl.atk },
                         },
-                    }}>{artifact.score.atk}</td
+                    }}
                 >
+                    {artifact.score.atk}
+                </td>
                 <td
                     use:tooltip={{
                         content: {
                             component: Artifact,
                             props: { artifact, highlights: hl.hp },
                         },
-                    }}>{artifact.score.hp}</td
+                    }}
                 >
+                    {artifact.score.hp}
+                </td>
             </tr>
         {/each}
     </tbody>

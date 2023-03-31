@@ -14,13 +14,10 @@
     </thead>
     <tr>
         <th>{loc["ja"][artifact.mainStat.mainPropId]}</th>
-        <td
-            >{artifact.mainStat.statValue}{(perStats.includes(
-                artifact.mainStat.mainPropId
-            ) &&
-                "%") ||
-                ""}</td
-        >
+        <td>
+            {artifact.mainStat.statValue}
+            {(perStats.includes(artifact.mainStat.mainPropId) && "%") || ""}
+        </td>
     </tr>
 </table>
 <table>
@@ -32,11 +29,10 @@
     {#each artifact.subStats as stat}
         <tr class={(highlights.includes(stat.appendPropId) && "hl") || ""}>
             <th>{loc["ja"][stat.appendPropId]}</th>
-            <td
-                >{stat.statValue}{(perStats.includes(stat.appendPropId) &&
-                    "%") ||
-                    ""}</td
-            >
+            <td>
+                {stat.statValue}
+                {(perStats.includes(stat.appendPropId) && "%") || ""}
+            </td>
         </tr>
     {/each}
 </table>
