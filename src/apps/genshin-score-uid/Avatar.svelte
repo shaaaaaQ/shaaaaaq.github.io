@@ -81,6 +81,7 @@
             <tr>
                 <th
                     use:tooltip={{
+                        autoPosition: true,
                         content: {
                             component: Artifact,
                             props: { artifact },
@@ -91,6 +92,7 @@
                 </th>
                 <td
                     use:tooltip={{
+                        autoPosition: true,
                         content: {
                             component: Artifact,
                             props: { artifact, highlights: hl.crit },
@@ -101,6 +103,7 @@
                 </td>
                 <td
                     use:tooltip={{
+                        autoPosition: true,
                         content: {
                             component: Artifact,
                             props: { artifact, highlights: hl.atk },
@@ -111,6 +114,7 @@
                 </td>
                 <td
                     use:tooltip={{
+                        autoPosition: true,
                         content: {
                             component: Artifact,
                             props: { artifact, highlights: hl.hp },
