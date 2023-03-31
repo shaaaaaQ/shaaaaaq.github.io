@@ -1,11 +1,24 @@
 <script>
-    import { Tooltip } from "@svelte-plugins/tooltips";
+    import { tooltip } from "@svelte-plugins/tooltips";
     import Artifact from "./Artifact.svelte";
     import characters from "./characters.js";
     import loc from "./loc.js";
     import { equipType } from "./constants.js";
 
     export let avatarInfo;
+    const hl = {
+        crit: ["FIGHT_PROP_CRITICAL", "FIGHT_PROP_CRITICAL_HURT"],
+        atk: [
+            "FIGHT_PROP_CRITICAL",
+            "FIGHT_PROP_CRITICAL_HURT",
+            "FIGHT_PROP_ATTACK_PERCENT",
+        ],
+        hp: [
+            "FIGHT_PROP_CRITICAL",
+            "FIGHT_PROP_CRITICAL_HURT",
+            "FIGHT_PROP_HP_PERCENT",
+        ],
+    };
     const artifacts = [];
     const total = {
         crit: 0,
@@ -80,56 +93,33 @@
         {#each artifacts as artifact}
             <tr>
                 <th
-                    ><Tooltip
-                        content={{
-                            component: Artifact,
-                            props: { artifact, highlights: [] },
-                        }}>{equipType[artifact.type]}</Tooltip
-                    ></th
+                    use:tooltip={{
+                        content: { component: Artifact, props: { artifact } },
+                    }}>{equipType[artifact.type]}</th
                 >
                 <td
-                    ><Tooltip
-                        content={{
+                    use:tooltip={{
+                        content: {
                             component: Artifact,
-                            props: {
-                                artifact,
-                                highlights: [
-                                    "FIGHT_PROP_CRITICAL",
-                                    "FIGHT_PROP_CRITICAL_HURT",
-                                ],
-                            },
-                        }}>{artifact.score.crit}</Tooltip
-                    ></td
+                            props: { artifact, highlights: hl.crit },
+                        },
+                    }}>{artifact.score.crit}</td
                 >
                 <td
-                    ><Tooltip
-                        content={{
+                    use:tooltip={{
+                        content: {
                             component: Artifact,
-                            props: {
-                                artifact,
-                                highlights: [
-                                    "FIGHT_PROP_CRITICAL",
-                                    "FIGHT_PROP_CRITICAL_HURT",
-                                    "FIGHT_PROP_ATTACK_PERCENT",
-                                ],
-                            },
-                        }}>{artifact.score.atk}</Tooltip
-                    ></td
+                            props: { artifact, highlights: hl.atk },
+                        },
+                    }}>{artifact.score.atk}</td
                 >
                 <td
-                    ><Tooltip
-                        content={{
+                    use:tooltip={{
+                        content: {
                             component: Artifact,
-                            props: {
-                                artifact,
-                                highlights: [
-                                    "FIGHT_PROP_CRITICAL",
-                                    "FIGHT_PROP_CRITICAL_HURT",
-                                    "FIGHT_PROP_HP_PERCENT",
-                                ],
-                            },
-                        }}>{artifact.score.hp}</Tooltip
-                    ></td
+                            props: { artifact, highlights: hl.hp },
+                        },
+                    }}>{artifact.score.hp}</td
                 >
             </tr>
         {/each}

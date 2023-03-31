@@ -2,7 +2,7 @@
     import loc from "./loc.js";
     import { equipType, perStats } from "./constants.js";
     export let artifact;
-    export let highlights;
+    export let highlights = [];
 </script>
 
 {equipType[artifact.type]} / {artifact.setName}
@@ -44,5 +44,8 @@
 <style>
     .hl {
         color: skyblue;
+    }
+    table * {
+        background-color: transparent;
     }
 </style>
