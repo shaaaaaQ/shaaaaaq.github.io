@@ -6,7 +6,7 @@ export const equipType = {
     EQUIP_DRESS: "冠",
 }
 
-export const perStats = [
+export const percentProps = [
     'FIGHT_PROP_HP_PERCENT',
     'FIGHT_PROP_ATTACK_PERCENT',
     'FIGHT_PROP_DEFENSE_PERCENT',

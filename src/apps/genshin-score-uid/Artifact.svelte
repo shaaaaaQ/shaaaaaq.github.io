@@ -1,5 +1,5 @@
 <script>
-    import { equipType, perStats } from "./constants.js";
+    import { equipType, percentProps } from "./constants.js";
     import { getText, handleMouseEnter, handleMouseLeave } from "./utils.js";
     export let artifact;
     export let score = 0;
@@ -29,7 +29,7 @@
     >
         <th>{getText(mainStat.mainPropId)}</th>
         <td>
-            {mainStat.statValue}{(perStats.includes(mainStat.mainPropId) &&
+            {mainStat.statValue}{(percentProps.includes(mainStat.mainPropId) &&
                 "%") ||
                 ""}
         </td>
@@ -48,7 +48,7 @@
         >
             <th>{getText(stat.appendPropId)}</th>
             <td>
-                {stat.statValue}{(perStats.includes(stat.appendPropId) &&
+                {stat.statValue}{(percentProps.includes(stat.appendPropId) &&
                     "%") ||
                     ""}
             </td>
