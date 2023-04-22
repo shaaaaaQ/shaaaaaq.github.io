@@ -24,16 +24,28 @@ export const perStats = [
     'FIGHT_PROP_GRASS_ADD_HURT'
 ]
 
-export const hl = {
-    crit: ["FIGHT_PROP_CRITICAL", "FIGHT_PROP_CRITICAL_HURT"],
-    atk: [
-        "FIGHT_PROP_CRITICAL",
-        "FIGHT_PROP_CRITICAL_HURT",
-        "FIGHT_PROP_ATTACK_PERCENT",
-    ],
-    hp: [
-        "FIGHT_PROP_CRITICAL",
-        "FIGHT_PROP_CRITICAL_HURT",
-        "FIGHT_PROP_HP_PERCENT",
-    ],
-};
+export const calcTypes = [
+    {
+        label: '会心',
+        rates: {
+            'FIGHT_PROP_CRITICAL': 2,
+            'FIGHT_PROP_CRITICAL_HURT': 1
+        }
+    },
+    {
+        label: '攻撃％',
+        rates: {
+            'FIGHT_PROP_CRITICAL': 2,
+            'FIGHT_PROP_CRITICAL_HURT': 1,
+            'FIGHT_PROP_ATTACK_PERCENT': 1
+        }
+    },
+    {
+        label: 'HP%',
+        rates: {
+            'FIGHT_PROP_CRITICAL': 2,
+            'FIGHT_PROP_CRITICAL_HURT': 1,
+            'FIGHT_PROP_HP_PERCENT': 1
+        }
+    }
+]

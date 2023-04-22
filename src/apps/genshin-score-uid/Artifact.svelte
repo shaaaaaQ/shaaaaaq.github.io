@@ -1,47 +1,72 @@
 <script>
-    import loc from "./loc.js";
     import { equipType, perStats } from "./constants.js";
+    import { getText, handleMouseEnter, handleMouseLeave } from "./utils.js";
     export let artifact;
+    export let score = 0;
     export let highlights = [];
+    $: detail = artifact.flat;
+    $: mainStat = detail.reliquaryMainstat;
+    $: subStats = detail.reliquarySubstats;
 </script>
 
-{equipType[artifact.type]} / {artifact.setName}
 <table>
     <thead>
         <tr>
-            <th colspan="2"> メインステータス </th>
+            <th colspan="2">
+                {equipType[detail.equipType]} / {getText(
+                    detail.setNameTextMapHash
+                )}
+            </th>
         </tr>
     </thead>
     <tr>
-        <th>{loc["ja"][artifact.mainStat.mainPropId]}</th>
+        <th colspan="2">メインステータス</th>
+    </tr>
+    <tr
+        class={mainStat.mainPropId}
+        on:mouseenter={handleMouseEnter}
+        on:mouseleave={handleMouseLeave}
+    >
+        <th>{getText(mainStat.mainPropId)}</th>
         <td>
-            {artifact.mainStat.statValue}
-            {(perStats.includes(artifact.mainStat.mainPropId) && "%") || ""}
+            {mainStat.statValue}
+            {(perStats.includes(mainStat.mainPropId) && "%") || ""}
         </td>
     </tr>
-</table>
-<table>
-    <thead>
-        <tr>
-            <th colspan="2"> サブステータス </th>
-        </tr>
-    </thead>
-    {#each artifact.subStats as stat}
-        <tr class={(highlights.includes(stat.appendPropId) && "hl") || ""}>
-            <th>{loc["ja"][stat.appendPropId]}</th>
+    <tr>
+        <th colspan="2">サブステータス</th>
+    </tr>
+    {#each subStats as stat}
+        <tr
+            class={stat.appendPropId +
+                ((highlights.includes(stat.appendPropId) &&
+                    ` ${detail.equipType}`) ||
+                    "")}
+            on:mouseenter={handleMouseEnter}
+            on:mouseleave={handleMouseLeave}
+        >
+            <th>{getText(stat.appendPropId)}</th>
             <td>
-                {stat.statValue}
-                {(perStats.includes(stat.appendPropId) && "%") || ""}
+                {stat.statValue}{(perStats.includes(stat.appendPropId) &&
+                    "%") ||
+                    ""}
             </td>
         </tr>
     {/each}
+    <tfoot>
+        <tr
+            class={`${detail.equipType} score`}
+            on:mouseenter={handleMouseEnter}
+            on:mouseleave={handleMouseLeave}
+        >
+            <th>スコア</th>
+            <td>{score}</td>
+        </tr>
+    </tfoot>
 </table>
 
 <style>
-    .hl {
-        color: skyblue;
-    }
-    table * {
-        background-color: transparent;
+    table {
+        width: auto;
     }
 </style>

@@ -13,7 +13,6 @@
   "license": "MIT",
   "dependencies": {
     "@astrojs/svelte": "^2.1.0",
-    "@svelte-plugins/tooltips": "^0.1.6",
     "astro": "^2.1.7",
     "svelte": "^3.57.0"
   }
