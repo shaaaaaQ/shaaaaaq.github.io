@@ -1,5 +1,6 @@
 <script>
     import Avatar from "./Avatar.svelte";
+    import CalcTypeSelect from "./CalcTypeSelect.svelte";
     import { getCharacterName } from "./utils.js";
     let uid;
     let player;
@@ -14,18 +15,25 @@
     }
 </script>
 
-<input bind:value={uid} placeholder="UID" />
-<button on:click={handleClick}>fetch</button>
+<div id="uid">
+    <input bind:value={uid} placeholder="UID" />
+    <button on:click={handleClick}>fetch</button>
+</div>
+
+<CalcTypeSelect />
+
 {#if player}
     <h3>{player.nickname}</h3>
 {/if}
+
 {#if avatarList}
-    <select bind:value={selected} placeholder="キャラクターを選択">
+    <select bind:value={selected}>
         {#each avatarList as avatar}
             <option value={avatar}>{getCharacterName(avatar.avatarId)}</option>
         {/each}
     </select>
 {/if}
+
 {#if selected}
     <Avatar avatar={selected} />
 {/if}
@@ -62,6 +70,14 @@
             .EQUIP_RING .EQUIP_RING.score,
             .EQUIP_DRESS .EQUIP_DRESS.score
         ) {
-        color: skyblue;
+        background: #324759;
+    }
+
+    :global(option) {
+        background: var(--background-alt);
+    }
+
+    #uid {
+        display: flex;
     }
 </style>

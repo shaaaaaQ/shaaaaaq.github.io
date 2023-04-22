@@ -29,8 +29,9 @@
     >
         <th>{getText(mainStat.mainPropId)}</th>
         <td>
-            {mainStat.statValue}
-            {(perStats.includes(mainStat.mainPropId) && "%") || ""}
+            {mainStat.statValue}{(perStats.includes(mainStat.mainPropId) &&
+                "%") ||
+                ""}
         </td>
     </tr>
     <tr>
@@ -68,5 +69,9 @@
 <style>
     table {
         width: auto;
+    }
+
+    table > tr > th[colspan="2"] {
+        background: var(--background-alt);
     }
 </style>

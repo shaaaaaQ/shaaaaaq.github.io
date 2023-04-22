@@ -24,7 +24,20 @@ export const perStats = [
     'FIGHT_PROP_GRASS_ADD_HURT'
 ]
 
-export const calcTypes = [
+export const subStatProps = [
+    'FIGHT_PROP_HP',
+    'FIGHT_PROP_ATTACK',
+    'FIGHT_PROP_DEFENSE',
+    'FIGHT_PROP_HP_PERCENT',
+    'FIGHT_PROP_ATTACK_PERCENT',
+    'FIGHT_PROP_DEFENSE_PERCENT',
+    'FIGHT_PROP_CRITICAL',
+    'FIGHT_PROP_CRITICAL_HURT',
+    'FIGHT_PROP_CHARGE_EFFICIENCY',
+    'FIGHT_PROP_ELEMENT_MASTERY'
+]
+
+export const defaultCalcTypes = [
     {
         label: '会心',
         rates: {
