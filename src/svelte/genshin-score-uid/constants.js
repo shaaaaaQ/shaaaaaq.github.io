@@ -24,6 +24,7 @@ export const percentProps = [
     'FIGHT_PROP_GRASS_ADD_HURT'
 ]
 
+// 移動予定
 export const subStatProps = [
     'FIGHT_PROP_HP',
     'FIGHT_PROP_ATTACK',

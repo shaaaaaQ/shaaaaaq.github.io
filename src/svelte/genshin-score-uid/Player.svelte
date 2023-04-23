@@ -1,5 +1,5 @@
 <script>
-    import { player } from "./store.js";
+    export let player;
 </script>
 
-<h3>{$player.nickname}</h3>
+<h3>{player.nickname}</h3>

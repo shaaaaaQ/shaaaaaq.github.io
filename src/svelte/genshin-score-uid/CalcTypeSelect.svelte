@@ -1,10 +1,10 @@
 <script>
-    import { selectedCalcType } from "./store.js";
     import config from "../config.js";
+    export let selected;
     const calcTypes = config.get("calcTypes");
 </script>
 
-<select bind:value={$selectedCalcType}>
+<select bind:value={selected}>
     {#each calcTypes as calcType}
         <option value={calcType}>{calcType.label}</option>
     {/each}

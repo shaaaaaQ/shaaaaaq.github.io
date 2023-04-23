@@ -1,10 +1,11 @@
 <script>
-    import { avatars, selectedAvatar } from "./store.js";
     import { getCharacterName } from "./utils.js";
+    export let avatars;
+    export let selected;
 </script>
 
-<select bind:value={$selectedAvatar}>
-    {#each $avatars as avatar}
+<select bind:value={selected}>
+    {#each avatars as avatar}
         <option value={avatar}>{getCharacterName(avatar.avatarId)}</option>
     {/each}
 </select>

@@ -4,23 +4,26 @@
     import Avatar from "./Avatar.svelte";
     import AvatarSelect from "./AvatarSelect.svelte";
     import Player from "./Player.svelte";
-    import { player, avatars, selectedAvatar } from "./store.js";
+    let player;
+    let avatars;
+    let avatar;
+    let calcType;
 </script>
 
-<UidForm />
+<UidForm bind:player bind:avatars bind:selectedAvatar={avatar} />
 
-{#if $player}
-    <Player />
+{#if player}
+    <Player {player} />
 {/if}
 
-{#if $avatars}
-    <AvatarSelect />
+{#if avatars}
+    <AvatarSelect {avatars} bind:selected={avatar} />
 {/if}
 
-<CalcTypeSelect />
+<CalcTypeSelect bind:selected={calcType} />
 
-{#if $selectedAvatar}
-    <Avatar />
+{#if avatar}
+    <Avatar {avatar} {calcType} />
 {/if}
 
 <style>
