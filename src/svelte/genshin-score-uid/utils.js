@@ -1,5 +1,3 @@
-import { defaultCalcTypes } from "./constants.js"
-
 const loc = await (async () => {
     const res = await fetch('https://raw.githubusercontent.com/EnkaNetwork/API-docs/master/store/loc.json');
     return res.json()
@@ -42,15 +40,6 @@ export function calcScore(artifacts, rates = {}) {
     })
     result['total'] = Math.round(result['total'] * 10) / 10;
     return result
-}
-
-export function getCalcTypes() {
-    const str = localStorage.getItem('calcTypes')
-    if (!str) {
-        localStorage.setItem('calcTypes', JSON.stringify(defaultCalcTypes))
-        return defaultCalcTypes
-    }
-    return JSON.parse(str)
 }
 
 export function handleMouseEnter(e) {

@@ -1,41 +1,26 @@
 <script>
-    import Avatar from "./Avatar.svelte";
+    import UidForm from "./UidForm.svelte";
     import CalcTypeSelect from "./CalcTypeSelect.svelte";
-    import { getCharacterName } from "./utils.js";
-    let uid;
-    let player;
-    let avatarList;
-    let selected;
-    async function handleClick() {
-        const res = await fetch(`https://enka.network/api/uid/${uid}`);
-        const data = await res.json();
-        player = data.playerInfo;
-        avatarList = data.avatarInfoList;
-        selected = undefined;
-    }
+    import Avatar from "./Avatar.svelte";
+    import AvatarSelect from "./AvatarSelect.svelte";
+    import Player from "./Player.svelte";
+    import { player, avatars, selectedAvatar } from "./store.js";
 </script>
 
-<div id="uid">
-    <input bind:value={uid} placeholder="UID" />
-    <button on:click={handleClick}>fetch</button>
-</div>
+<UidForm />
+
+{#if $player}
+    <Player />
+{/if}
+
+{#if $avatars}
+    <AvatarSelect />
+{/if}
 
 <CalcTypeSelect />
 
-{#if player}
-    <h3>{player.nickname}</h3>
-{/if}
-
-{#if avatarList}
-    <select bind:value={selected}>
-        {#each avatarList as avatar}
-            <option value={avatar}>{getCharacterName(avatar.avatarId)}</option>
-        {/each}
-    </select>
-{/if}
-
-{#if selected}
-    <Avatar avatar={selected} />
+{#if $selectedAvatar}
+    <Avatar />
 {/if}
 
 <style>
@@ -77,7 +62,8 @@
         background: var(--background-alt);
     }
 
-    #uid {
-        display: flex;
+    :global(body) {
+        max-width: none;
+        margin: 6rem 4rem 1rem 4rem;
     }
 </style>

@@ -6,12 +6,11 @@
         handleMouseEnter,
         handleMouseLeave,
     } from "./utils.js";
-    import { calcType } from "./store.js";
+    import { selectedAvatar, selectedCalcType } from "./store.js";
     import { equipType } from "./constants.js";
-    export let avatar;
-    $: artifacts = getArtifacts(avatar.equipList);
-    $: score = calcScore(artifacts, $calcType.rates);
-    $: highlights = Object.keys($calcType.rates);
+    $: artifacts = getArtifacts($selectedAvatar.equipList);
+    $: score = calcScore(artifacts, $selectedCalcType.rates);
+    $: highlights = Object.keys($selectedCalcType.rates);
 </script>
 
 <h3

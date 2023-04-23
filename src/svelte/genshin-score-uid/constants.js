@@ -36,29 +36,3 @@ export const subStatProps = [
     'FIGHT_PROP_CHARGE_EFFICIENCY',
     'FIGHT_PROP_ELEMENT_MASTERY'
 ]
-
-export const defaultCalcTypes = [
-    {
-        label: '会心',
-        rates: {
-            'FIGHT_PROP_CRITICAL': 2,
-            'FIGHT_PROP_CRITICAL_HURT': 1
-        }
-    },
-    {
-        label: '攻撃％',
-        rates: {
-            'FIGHT_PROP_CRITICAL': 2,
-            'FIGHT_PROP_CRITICAL_HURT': 1,
-            'FIGHT_PROP_ATTACK_PERCENT': 1
-        }
-    },
-    {
-        label: 'HP%',
-        rates: {
-            'FIGHT_PROP_CRITICAL': 2,
-            'FIGHT_PROP_CRITICAL_HURT': 1,
-            'FIGHT_PROP_HP_PERCENT': 1
-        }
-    }
-]
