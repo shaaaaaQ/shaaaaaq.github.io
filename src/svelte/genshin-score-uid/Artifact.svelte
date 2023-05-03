@@ -34,26 +34,30 @@
                 ""}
         </td>
     </tr>
-    <tr>
-        <th colspan="2">サブステータス</th>
-    </tr>
-    {#each subStats as stat}
-        <tr
-            class={stat.appendPropId +
-                ((highlights.includes(stat.appendPropId) &&
-                    ` ${detail.equipType}`) ||
-                    "")}
-            on:mouseenter={handleMouseEnter}
-            on:mouseleave={handleMouseLeave}
-        >
-            <th>{getText(stat.appendPropId)}</th>
-            <td>
-                {stat.statValue}{(percentProps.includes(stat.appendPropId) &&
-                    "%") ||
-                    ""}
-            </td>
+    {#if subStats}
+        <tr>
+            <th colspan="2">サブステータス</th>
         </tr>
-    {/each}
+        {#each subStats as stat}
+            <tr
+                class={stat.appendPropId +
+                    ((highlights.includes(stat.appendPropId) &&
+                        ` ${detail.equipType}`) ||
+                        "")}
+                on:mouseenter={handleMouseEnter}
+                on:mouseleave={handleMouseLeave}
+            >
+                <th>{getText(stat.appendPropId)}</th>
+                <td>
+                    {stat.statValue}{(percentProps.includes(
+                        stat.appendPropId
+                    ) &&
+                        "%") ||
+                        ""}
+                </td>
+            </tr>
+        {/each}
+    {/if}
     <tfoot>
         <tr
             class={`${detail.equipType} score`}

@@ -32,6 +32,7 @@ export function calcScore(artifacts, rates = {}) {
     }
     artifacts.forEach(artifact => {
         const equipType = artifact.flat.equipType
+        if (!artifact.flat.reliquarySubstats) return
         artifact.flat.reliquarySubstats.forEach(stat => {
             result[equipType] += stat.statValue * (rates[stat.appendPropId] || 0)
         })
