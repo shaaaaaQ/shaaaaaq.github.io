@@ -1,6 +1,6 @@
 <script>
     import ScoreTable from "./ScoreTable.svelte";
-    import CalcTypeSelect from "../components/CalcTypeSelect.svelte";
+    import CalcTypeSelect from "./CalcTypeSelect.svelte";
     import Tesseract from "tesseract.js";
     let calcType;
     let canvas;

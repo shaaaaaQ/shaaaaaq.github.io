@@ -1,4 +1,4 @@
-const defaultConfig = {
+const defaultSettings = {
     calcTypes: [
         {
             label: '会心',
@@ -28,9 +28,13 @@ const defaultConfig = {
 
 
 
-function getConfigObject() {
-    const str = localStorage.getItem('config')
+function getObject() {
+    const str = localStorage.getItem('settings')
     return str && JSON.parse(str) || {}
+}
+
+function setObject(obj) {
+    localStorage.setItem('settings', JSON.stringify(obj))
 }
 
 function _get(key, obj) {
@@ -46,12 +50,35 @@ function _get(key, obj) {
     return result
 }
 
+function _set(key, value) {
+    const settings = getObject()
+    const seg = key.split('.')
+    let obj = settings
+    console.log(settings)
+    seg.forEach((key, index) => {
+        console.log(obj)
+        if (seg.length === index + 1) {
+            obj[key] = value
+        } else {
+            if (!obj[key]) obj[key] = {}
+            obj = obj[key]
+        }
+    })
+    console.log(settings)
+    setObject(settings)
+}
+
 function get(key) {
-    const config = getConfigObject()
-    const result = _get(key, config) || _get(key, defaultConfig)
+    const settings = getObject()
+    const result = _get(key, settings) || _get(key, defaultSettings)
     return result
 }
 
+function set(key, value) {
+    _set(key, value)
+}
+
 export default {
-    get
+    get,
+    set
 }

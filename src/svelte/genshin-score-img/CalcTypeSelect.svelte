@@ -1,7 +1,7 @@
 <script>
-    import config from "../config.js";
+    import settings from "../settings.js";
     export let selected;
-    const calcTypes = config.get("calcTypes");
+    const calcTypes = settings.get("calcTypes");
 </script>
 
 <select bind:value={selected}>

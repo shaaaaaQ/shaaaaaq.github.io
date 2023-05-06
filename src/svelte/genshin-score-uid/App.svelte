@@ -1,6 +1,6 @@
 <script>
     import UidForm from "./UidForm.svelte";
-    import CalcTypeSelect from "../components/CalcTypeSelect.svelte";
+    import CalcTypeSelect from "./CalcTypeSelect.svelte";
     import Avatar from "./Avatar.svelte";
     import AvatarSelect from "./AvatarSelect.svelte";
     import Player from "./Player.svelte";
