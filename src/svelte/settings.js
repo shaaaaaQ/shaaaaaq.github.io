@@ -54,9 +54,7 @@ function _set(key, value) {
     const settings = getObject()
     const seg = key.split('.')
     let obj = settings
-    console.log(settings)
     seg.forEach((key, index) => {
-        console.log(obj)
         if (seg.length === index + 1) {
             obj[key] = value
         } else {
@@ -64,7 +62,6 @@ function _set(key, value) {
             obj = obj[key]
         }
     })
-    console.log(settings)
     setObject(settings)
 }
 
