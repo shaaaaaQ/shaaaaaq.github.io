@@ -5,6 +5,7 @@
         calcScore,
         handleMouseEnter,
         handleMouseLeave,
+        getCharacterName,
     } from "./utils.js";
     import { equipType } from "./constants.js";
     export let avatar;
@@ -14,16 +15,17 @@
     $: highlights = Object.keys(calcType.rates);
 </script>
 
-<h3
-    class={`${Object.keys(equipType).join(" ")} score`}
-    on:mouseenter={handleMouseEnter}
-    on:mouseleave={handleMouseLeave}
->
-    合計スコア: {score.total}
-</h3>
-
 <details>
-    <summary>聖遺物</summary>
+    <summary>
+        {getCharacterName(avatar.avatarId)}
+        <span
+            class={`${Object.keys(equipType).join(" ")} score`}
+            on:mouseenter={handleMouseEnter}
+            on:mouseleave={handleMouseLeave}
+        >
+            ({score.total})
+        </span>
+    </summary>
     <div id="artifacts">
         {#each artifacts as artifact}
             <Artifact

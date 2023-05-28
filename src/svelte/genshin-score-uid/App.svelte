@@ -2,29 +2,23 @@
     import UidForm from "./UidForm.svelte";
     import CalcTypeSelect from "./CalcTypeSelect.svelte";
     import Avatar from "./Avatar.svelte";
-    import AvatarSelect from "./AvatarSelect.svelte";
     import Player from "./Player.svelte";
     let player;
-    let avatars;
-    let avatar;
+    let avatars = [];
     let calcType;
 </script>
 
-<UidForm bind:player bind:avatars bind:selectedAvatar={avatar} />
+<UidForm bind:player bind:avatars />
+
+<CalcTypeSelect bind:selected={calcType} />
 
 {#if player}
     <Player {player} />
 {/if}
 
-{#if avatars}
-    <AvatarSelect {avatars} bind:selected={avatar} />
-{/if}
-
-<CalcTypeSelect bind:selected={calcType} />
-
-{#if avatar}
+{#each avatars as avatar}
     <Avatar {avatar} {calcType} />
-{/if}
+{/each}
 
 <style>
     :global(

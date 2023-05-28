@@ -1,14 +1,12 @@
 <script>
     export let player;
     export let avatars;
-    export let selectedAvatar;
     let uid;
     async function handleClick() {
         const res = await fetch(`https://enka.network/api/uid/${uid}`);
         const data = await res.json();
         player = data.playerInfo;
-        avatars = data.avatarInfoList;
-        selectedAvatar = undefined;
+        avatars = data.avatarInfoList || [];
     }
 </script>
 

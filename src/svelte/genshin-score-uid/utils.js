@@ -44,8 +44,8 @@ export function calcScore(artifacts, rates = {}) {
 }
 
 export function handleMouseEnter(e) {
-    document.body.classList.add(...e.target.classList);
+    e.target.closest('details').classList.add(...e.target.classList);
 }
 export function handleMouseLeave(e) {
-    document.body.classList.remove(...e.target.classList);
+    e.target.closest('details').classList.remove(...e.target.classList);
 }
