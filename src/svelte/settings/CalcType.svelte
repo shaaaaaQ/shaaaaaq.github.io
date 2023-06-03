@@ -1,28 +1,31 @@
 <script>
-    import settings from "../settings.js";
-    let calcTypes = settings.get("calcTypes");
+    import { calcTypes } from "./store.js";
+    import { locales } from "./constants.js";
 </script>
 
-{#each calcTypes as { label, rates }, index}
+{#each $calcTypes as { label, rates }, index}
     <table>
         <thead>
             <tr>
-                <th>{label}</th>
-                <th
-                    on:click={() => {
-                        if (calcTypes.length === 1) return;
-                        calcTypes.splice(index, 1);
-                        calcTypes = calcTypes;
-                        settings.set("calcTypes", calcTypes);
-                    }}>削除</th
-                >
+                <th colspan="2">{label}</th>
+                <th on:click={() => calcTypes.rm(index)}>削除</th>
             </tr>
         </thead>
         <tbody>
             {#each Object.entries(rates) as [propId, rate]}
                 <tr>
-                    <th>{propId}</th>
-                    <td>{rate}</td>
+                    <th>{locales["ja"][propId]}</th>
+                    <td
+                        on:input={(e) => {
+                            const value = parseFloat(e.target.textContent);
+                            if (!isNaN(value))
+                                calcTypes.changeRate(index, propId, value);
+                        }}
+                        contenteditable
+                    >
+                        {rate}
+                    </td>
+                    <th on:click={() => calcTypes.rm(index, propId)}>削除</th>
                 </tr>
             {/each}
         </tbody>
