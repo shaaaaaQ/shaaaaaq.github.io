@@ -3,3 +3,9 @@
 </script>
 
 <CalcType />
+
+<style>
+    :global(option) {
+        background: var(--background-alt);
+    }
+</style>

@@ -15,18 +15,35 @@ export const calcTypes = (() => {
             }
         })
     }
-    const changeRate = (index, propId, rate) => {
+    const updateProp = (index, propId, rate) => {
         calcTypes.update(c => {
             c[index]['rates'][propId] = rate
             return c
         })
     }
+    const updateLabel = (index, label) => {
+        calcTypes.update(c => {
+            c[index]['label'] = label
+            return c
+        })
+    }
+    const append = (label) => {
+        calcTypes.update(c => {
+            c.push({
+                label,
+                rates: {}
+            })
+            return c
+        })
+    }
     calcTypes.subscribe(c => settings.set('calcTypes', c))
-    calcTypes.subscribe(console.log)
+    // calcTypes.subscribe(console.log)
 
     return {
         ...calcTypes,
         rm,
-        changeRate
+        append,
+        updateProp,
+        updateLabel
     }
 })()
