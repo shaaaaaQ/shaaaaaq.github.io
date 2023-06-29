@@ -1,6 +1,7 @@
 <script>
-    import ScoreTable from "./ScoreTable.svelte";
+    import Table from "./Table.svelte";
     import CalcTypeSelect from "./CalcTypeSelect.svelte";
+    import Settings from "./Settings/index.svelte";
     import Tesseract from "tesseract.js";
     let calcType;
     let canvas;
@@ -70,7 +71,27 @@
 
 <CalcTypeSelect bind:selected={calcType} />
 
-<ScoreTable {stats} {calcType} />
+<Table {stats} {calcType} />
+
+<details>
+    <summary>設定</summary>
+    <Settings />
+</details>
+
+<details>
+    <summary>使い方</summary>
+    <a href="/images/kore.png" target="_blank">これ</a>をWindowsなら<code
+        >Win+Shift+S</code
+    >とかで<a href="/images/konnna.png" target="_blank">こんな</a
+    >感じに切り取って上のやつに貼り付ける
+</details>
+
+<a href="https://github.com/naptha/tesseract.js" target="_blank">tesseract.js</a
+>
+(<a
+    href="https://github.com/naptha/tesseract.js/blob/master/LICENSE.md"
+    target="_blank">LICENSE</a
+>)
 
 <style>
     :global(option) {

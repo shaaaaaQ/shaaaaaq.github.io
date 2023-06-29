@@ -1,5 +1,5 @@
 <script>
-    import { calcTypes } from "./store.js";
+    import { calcTypes } from "../store.js";
     let label;
 </script>
 
