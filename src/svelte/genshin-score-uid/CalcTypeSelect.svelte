@@ -1,5 +1,5 @@
 <script>
-    import settings from "../settings.js";
+    import settings from "../../js/settings.js";
     export let selected;
     const calcTypes = settings.get("calcTypes");
 </script>

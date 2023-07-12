@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store'
-import settings from '../settings.js'
+import settings from '../../js/settings.js'
 
 export const calcTypes = (() => {
     const calcTypes = writable(settings.get('calcTypes'))
