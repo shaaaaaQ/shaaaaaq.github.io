@@ -1,11 +1,11 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "../../layouts/Bahunya.astro";
 ---
 
 <BaseLayout>
     <h2>btoa</h2>
     <textarea
-        oninput="try { document.getElementById('btoa-output').value = btoa(this.value); document.getElementById('error').textContent = '' } catch (e) { document.getElementById('error').textContent = e }"
+        oninput="try { document.getElementById('btoa-output').value = btoa(this.value); document.getElementById('error').textContent = '' } catch (e) { document.getElementById('error').textContent = e } "
     ></textarea>
     <textarea id="btoa-output"></textarea>
 

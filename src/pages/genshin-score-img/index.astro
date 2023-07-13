@@ -1,8 +1,28 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
 import App from "../../svelte/genshin-score-img/App.svelte";
+// Gray
+// Cyan
 ---
 
-<BaseLayout>
-    <App client:load />
-</BaseLayout>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+    </head>
+    <body>
+        <App client:load />
+    </body>
+</html>
+
+<style is:global>
+    * {
+        color: #f3f4f6;
+    }
+    body {
+        background: #111827;
+    }
+    a {
+        color: #0ea5e9;
+    }
+</style>
