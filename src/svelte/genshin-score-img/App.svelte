@@ -92,9 +92,3 @@
     href="https://github.com/naptha/tesseract.js/blob/master/LICENSE.md"
     target="_blank">LICENSE</a
 >)
-
-<style>
-    :global(option) {
-        background: var(--background-alt);
-    }
-</style>

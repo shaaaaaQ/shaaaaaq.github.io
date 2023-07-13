@@ -8,3 +8,9 @@
         <option value={calcType}>{calcType.label}</option>
     {/each}
 </select>
+
+<style>
+    select {
+        background: #1f2937;
+    }
+</style>

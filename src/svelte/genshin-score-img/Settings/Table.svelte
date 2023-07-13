@@ -29,12 +29,15 @@
                 const value = e.target.textContent;
                 calcTypes.updateLabel(index, value);
             }}
+            on:keydown={(e) => {
+                e.key === "Enter" && e.preventDefault();
+            }}
             contenteditable
         >
             {label}
         </div>
         <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div class="delete-button" on:click={() => calcTypes.rm(index)}>X</div>
+        <div class="delete-button" on:click={() => calcTypes.rm(index)}>x</div>
     </div>
     <div class="item-container">
         {#each Object.entries(rates) as [propId, rate]}
@@ -56,23 +59,26 @@
                     class="remove-button"
                     on:click={() => calcTypes.rm(index, propId)}
                 >
-                    X
+                    x
                 </div>
             </div>
         {/each}
     </div>
     <div class="foot flex">
-        <select bind:value={selected}>
+        <select class="prop-select" bind:value={selected}>
             <option hidden />
             {#each selectable as propId}
                 <option value={propId}>{props[propId]}</option>
             {/each}
         </select>
-        <button
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <div
+            class="push-button"
             on:click={() =>
                 selected && calcTypes.updateProp(index, selected, 1)}
-            >追加</button
         >
+            +
+        </div>
     </div>
 </div>
 
@@ -93,6 +99,9 @@
     .head {
         padding: 5px;
     }
+    .foot {
+        padding: 5px 5px 5px 0;
+    }
     .item {
         background: #374151;
         margin: 5px 0;
@@ -108,13 +117,22 @@
         border: none;
         border-radius: 5px;
         text-align: end;
+        padding: 2px;
     }
-    .rate:focus-visible {
+    .rate:focus-visible,
+    .prop-select:focus-visible {
         outline: none;
     }
     .remove-button,
-    .delete-button {
+    .delete-button,
+    .push-button {
         width: 30px;
         text-align: center;
+    }
+    .prop-select {
+        background: #374151;
+        border: none;
+        border-radius: 8px;
+        width: 199px;
     }
 </style>
