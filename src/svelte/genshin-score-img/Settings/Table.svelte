@@ -38,7 +38,12 @@
             {label}
         </div>
         <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div class="delete-button" on:click={() => calcTypes.rm(index)}>x</div>
+        <button
+            class="delete-button material-icons"
+            on:click={() => calcTypes.rm(index)}
+        >
+            delete
+        </button>
     </div>
     <div class="item-container">
         {#each Object.entries(rates) as [propId, rate]}
@@ -62,13 +67,13 @@
             {/each}
         </select>
         <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div
-            class="push-button"
+        <button
+            class="push-button material-icons"
             on:click={() =>
                 selected && calcTypes.updateProp(index, selected, 1)}
         >
-            +
-        </div>
+            add
+        </button>
     </div>
 </div>
 
@@ -95,8 +100,12 @@
     }
     .delete-button,
     .push-button {
-        width: 30px;
+        margin-left: 4px;
+        width: 26px;
         text-align: center;
+        background: #1f2937;
+        border: none;
+        padding: 0;
     }
     .prop-select {
         background: #374151;

@@ -25,7 +25,7 @@
         contenteditable
     />
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div class="remove-button" on:click>x</div>
+    <button class="remove-button material-icons" on:click>remove</button>
 </div>
 
 <style>
@@ -51,7 +51,11 @@
         outline: none;
     }
     .remove-button {
-        width: 30px;
+        margin-left: 4px;
+        width: 26px;
         text-align: center;
+        background: #374151;
+        border: none;
+        padding: 0;
     }
 </style>
