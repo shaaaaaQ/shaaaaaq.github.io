@@ -1,5 +1,6 @@
 <script>
     import { calcTypes } from "../store.js";
+    import Item from "./Item.svelte";
     export let label;
     export let rates;
     export let index;
@@ -22,7 +23,7 @@
 </script>
 
 <div class="table">
-    <div class="head flex">
+    <div class="head">
         <div
             class="label"
             on:input={(e) => {
@@ -41,30 +42,19 @@
     </div>
     <div class="item-container">
         {#each Object.entries(rates) as [propId, rate]}
-            <div class="item flex">
-                <div class="prop-name">{props[propId]}</div>
-                <input
-                    class="rate"
-                    on:input={(e) => {
-                        const value = parseFloat(e.target.value);
-                        if (!isNaN(value))
-                            calcTypes.updateProp(index, propId, value);
-                    }}
-                    on:keydown={(e) => e.key === "Enter" && e.preventDefault()}
-                    value={rate}
-                    contenteditable
-                />
-                <!-- svelte-ignore a11y-click-events-have-key-events -->
-                <div
-                    class="remove-button"
-                    on:click={() => calcTypes.rm(index, propId)}
-                >
-                    x
-                </div>
-            </div>
+            <Item
+                on:input={(e) => {
+                    const value = parseFloat(e.target.value);
+                    if (!isNaN(value))
+                        calcTypes.updateProp(index, propId, value);
+                }}
+                on:click={() => calcTypes.rm(index, propId)}
+                value={rate}
+                {propId}
+            />
         {/each}
     </div>
-    <div class="foot flex">
+    <div class="foot">
         <select class="prop-select" bind:value={selected}>
             <option hidden />
             {#each selectable as propId}
@@ -89,41 +79,20 @@
         background: #1f2937;
         padding: 10px;
     }
-    .flex {
-        display: flex;
-    }
-
     .label {
         width: 194px;
     }
     .head {
         padding: 5px;
+        display: flex;
     }
     .foot {
         padding: 5px 5px 5px 0;
+        display: flex;
     }
-    .item {
-        background: #374151;
-        margin: 5px 0;
-        padding: 5px;
-        border-radius: 8px;
-    }
-    .prop-name {
-        width: 150px;
-    }
-    .rate {
-        background: #4b5563;
-        width: 40px;
-        border: none;
-        border-radius: 5px;
-        text-align: end;
-        padding: 2px;
-    }
-    .rate:focus-visible,
     .prop-select:focus-visible {
         outline: none;
     }
-    .remove-button,
     .delete-button,
     .push-button {
         width: 30px;
