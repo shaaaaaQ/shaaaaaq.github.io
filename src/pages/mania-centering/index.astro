@@ -3,66 +3,66 @@ import BaseLayout from "@layouts/Bahunya.astro";
 ---
 
 <style>
-    .e {
-        border: 1px solid red;
-    }
+  .e {
+    border: 1px solid red;
+  }
 
-    #out {
-        margin-top: 30px;
-    }
+  #out {
+    margin-top: 30px;
+  }
 </style>
 
 <BaseLayout>
-    <div>
-        Screen width
-        <input oninput="calc()" id="screen-width" value="1920" />
-    </div>
-    <div>
-        Screen height
-        <input oninput="calc()" id="screen-height" value="1080" />
-    </div>
-    <div>
-        ColumnWidth
-        <input oninput="calc()" id="column-width" value="52,52,52,52" />
-    </div>
+  <div>
+    Screen width
+    <input oninput="calc()" id="screen-width" value="1920" />
+  </div>
+  <div>
+    Screen height
+    <input oninput="calc()" id="screen-height" value="1080" />
+  </div>
+  <div>
+    ColumnWidth
+    <input oninput="calc()" id="column-width" value="52,52,52,52" />
+  </div>
 
-    <div id="out">
-        ColumnStart
-        <input id="column-start" />
-    </div>
-    <script is:inline>
-        function gI(id) {
-            return document.getElementById(id);
-        }
-        function calc() {
-            const columnStartElem = gI("column-start");
-            const columnWidthElem = gI("column-width");
-            const screenHeightElem = gI("screen-height");
-            const screenWidthElem = gI("screen-width");
+  <div id="out">
+    ColumnStart
+    <input id="column-start" />
+  </div>
+  <script is:inline>
+    function gI(id) {
+      return document.getElementById(id);
+    }
+    function calc() {
+      const columnStartElem = gI("column-start");
+      const columnWidthElem = gI("column-width");
+      const screenHeightElem = gI("screen-height");
+      const screenWidthElem = gI("screen-width");
 
-            const screenHeight = parseFloat(screenHeightElem.value);
-            const screenWidth = parseFloat(screenWidthElem.value);
-            const screen = screenHeight / screenWidth;
-            const columnSum = columnWidthElem.value
-                .split(/\s|,/)
-                .reduce((sum, val) => {
-                    return sum + parseFloat(val);
-                }, 0);
-            const res = 480 / screen / 2 - columnSum / 2;
+      const screenHeight = parseFloat(screenHeightElem.value);
+      const screenWidth = parseFloat(screenWidthElem.value);
+      const screen = screenHeight / screenWidth;
+      const columnSum = columnWidthElem.value
+        .split(/\s|,/)
+        .reduce((sum, val) => {
+          return sum + parseFloat(val);
+        }, 0);
+      const res = 480 / screen / 2 - columnSum / 2;
 
-            columnStartElem.value = "";
-            screenHeightElem.classList.remove("e");
-            screenWidthElem.classList.remove("e");
-            columnWidthElem.classList.remove("e");
+      columnStartElem.value = "";
+      screenHeightElem.classList.remove("e");
+      screenWidthElem.classList.remove("e");
+      columnWidthElem.classList.remove("e");
 
-            if (isNaN(screenHeight)) screenHeightElem.classList.add("e");
-            if (isNaN(screenWidth)) screenWidthElem.classList.add("e");
-            if (isNaN(columnSum)) columnWidthElem.classList.add("e");
+      if (isNaN(screenHeight)) screenHeightElem.classList.add("e");
+      if (isNaN(screenWidth)) screenWidthElem.classList.add("e");
+      if (isNaN(columnSum)) columnWidthElem.classList.add("e");
 
-            if (isNaN(res)) return;
+      if (isNaN(res)) return;
 
-            columnStartElem.value = Math.round(res);
-        }
-        calc();
-    </script>
+      columnStartElem.value = Math.round(res);
+    }
+    calc();
+  </script>
 </BaseLayout>
