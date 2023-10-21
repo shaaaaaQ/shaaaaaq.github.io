@@ -1,8 +1,8 @@
 ---
-import BaseLayout from "@layouts/Bahunya.astro";
+import Bahunya from "@layouts/Bahunya.astro";
 ---
 
-<BaseLayout>
+<Bahunya>
     <h2>btoa</h2>
     <textarea
         oninput="try { document.getElementById('btoa-output').value = btoa(this.value); document.getElementById('error').textContent = '' } catch (e) { document.getElementById('error').textContent = e } "
@@ -16,4 +16,4 @@ import BaseLayout from "@layouts/Bahunya.astro";
     <textarea id="atob-output"></textarea>
 
     <div id="error"></div>
-</BaseLayout>
+</Bahunya>
