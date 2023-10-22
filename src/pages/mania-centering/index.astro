@@ -1,5 +1,5 @@
 ---
-import Bahunya from "@layouts/Bahunya.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
 <style>
@@ -12,7 +12,7 @@ import Bahunya from "@layouts/Bahunya.astro";
     }
 </style>
 
-<Bahunya>
+<BaseLayout>
     <div>
         Screen width
         <input oninput="calc()" id="screen-width" value="1920" />
@@ -65,4 +65,4 @@ import Bahunya from "@layouts/Bahunya.astro";
     }
     calc();
     </script>
-</Bahunya>
+</BaseLayout>

@@ -1,35 +1,27 @@
 ---
-import Bahunya from "@layouts/Bahunya.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Link from "@components/Link.astro";
 ---
 
-<Bahunya>
-    <ul>
-        <li>
-            <a href="/mania-centering/index.html"
-                >osu!maniaのあれを真ん中にするときのColumnStartの値を求めるツール</a
-            >
-        </li>
-        <li><a href="/btoa/index.html">btoa, atob</a></li>
-        <li>
-            <a href="/genshin-score/index.html"
-                >聖遺物の画像からスコア計算するやつ(PC用)</a
-            >
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <a
-                href="https://github.com/Kimeiga/bahunya"
-                target="_blank"
-                rel="noopener">使ってるCSS</a
-            >
-        </li>
-        <li>
-            <a
-                href="https://github.com/shaaaaaQ/shaaaaaq.github.io"
-                target="_blank"
-                rel="noopener">GitHub</a
-            >
-        </li>
-    </ul>
-</Bahunya>
+<BaseLayout>
+    <div class="flex flex-col w-fit m-auto mt-10 gap-3">
+        <Link
+            text="osu!maniaのあれを真ん中にするときのColumnStartを求めるやつ"
+            url="/mania-centering/index.html"
+        />
+        <Link text="btoa, atob" url="/btoa/index.html" />
+        <Link
+            text="聖遺物の画像からスコア計算するやつ"
+            url="/genshin-score/index.html"
+        />
+    </div>
+    <div class="flex flex-col w-fit m-auto mt-10 gap-3">
+        <Link text="GitHub" url="https://github.com/shaaaaaQ" />
+    </div>
+</BaseLayout>
+
+<style lang="postcss">
+    :global(html) {
+        @apply bg-slate-700
+    }
+</style>
