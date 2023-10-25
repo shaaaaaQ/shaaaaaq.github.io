@@ -3,17 +3,64 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-    <h2>btoa</h2>
-    <textarea
-        oninput="try { document.getElementById('btoa-output').value = btoa(this.value); document.getElementById('error').textContent = '' } catch (e) { document.getElementById('error').textContent = e } "
-    ></textarea>
-    <textarea id="btoa-output"></textarea>
+    <div class="flex flex-col p-4 items-center gap-3">
+        <div class="flex [&_label]:p-2 [&_input]:hidden">
+            <label>
+                <input
+                    id="radio-btoa"
+                    onchange="a(); "
+                    type="radio"
+                    name="m"
+                    checked
+                />
+                <div>btoa</div>
+            </label>
+            <label>
+                <input onchange="a(); " type="radio" name="m" />
+                <div>atob</div>
+            </label>
+        </div>
 
-    <h2>atob</h2>
-    <textarea
-        oninput="try { document.getElementById('atob-output').value = atob(this.value); document.getElementById('error').textContent = '' } catch (e) { document.getElementById('error').textContent = e }"
-    ></textarea>
-    <textarea id="atob-output"></textarea>
+        <textarea id="input" oninput="a();"></textarea>
+        <textarea id="output"></textarea>
+    </div>
 
-    <div id="error"></div>
+    <script is:inline>
+    const input = document.getElementById("input");
+    const radio = document.getElementById("radio-btoa");
+
+    function a() {
+        const output = document.getElementById("output");
+        output.classList.remove("e");
+        try {
+            output.value = radio.checked
+                ? btoa(input.value)
+                : atob(input.value);
+        } catch (e) {
+            output.value = e;
+            output.classList.add("e");
+        }
+    }
+    </script>
 </BaseLayout>
+
+<style lang="postcss">
+    :global(html) {
+        @apply bg-slate-700
+    }
+    :global(body) {
+        @apply h-screen
+    }
+    * {
+        @apply text-white
+    }
+    textarea {
+        @apply block p-2 rounded-md w-full max-w-[40rem] h-[15rem] bg-slate-500 focus-visible:outline-none
+    }
+    .e {
+        @apply text-red-500
+    }
+    input:checked+div {
+        @apply border-b-2 border-solid border-blue-400
+    }
+</style>
