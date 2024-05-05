@@ -1,50 +1,46 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-
-const hoge = {
-    Link: {
-        "https://twitter.com/sfx_as": "Twitter",
-        "https://github.com/shaaaaaQ": "GitHub",
-        "https://misskey.io/@sfx__as": "Misskey.io",
-        "https://msk.seppuku.club/@sh": "切腹🔑",
-        "https://osu.ppy.sh/users/16234052": "osu!",
-        // "https://wonderosu.com/u/2885": "Wonderosu",
-        // "https://web.mamesosu.net/profile/546/mania": "MamesOsu",
-        "https://www.geartics.com/sfx_as": "Geartics",
-    },
-    "作ったやつ？": {
-        "/mania-centering/index.html":
-            "osu!maniaのあれを真ん中にするときのColumnStartを求めるやつ",
-        "/btoa/index.html": "btoa, atob",
-        "/genshin-score/index.html": "聖遺物の画像からスコア計算するやつ",
-    },
+const links = {
+    Twitter: "https://twitter.com/sfx_as",
+    GitHub: "https://github.com/shaaaaaQ",
+    "Misskey.io": "https://misskey.io/@sfx__as",
+    "切腹🔑": "https://msk.seppuku.club/@sh",
+    "osu!": "https://osu.ppy.sh/users/16234052",
+    Geartics: "https://www.geartics.com/sfx_as",
+    なんか: "/nanka",
 };
 ---
 
-<BaseLayout>
-    <div class="flex flex-col w-fit gap-5 m-auto p-10">
-        {
-            Object.entries(hoge).map(([title, items]) => (
-                <div class="flex flex-col gap-3">
-                    <span class="text-center text-white text-4xl font-bold">
-                        {title}
-                    </span>
-                    {Object.entries(items).map(([url, text]) => (
-                        <a
-                            href={url}
-                            class="p-4 rounded-full text-center text-white bg-slate-500 hover:bg-slate-400 transition-colors"
-                        >
-                            {text}
-                        </a>
-                    ))}
-                </div>
-            ))
-        }
+<BaseLayout title="sh">
+    <div
+        class="flex flex-col bg-slate-700 w-fit h-fit items-center rounded-md shadow-2xl m-auto p-16 gap-10"
+    >
+        <img
+            class="rounded-full"
+            width="120"
+            height="120"
+            src="/images/icon.png"
+        />
+        <div class="flex flex-col gap-3">
+            {
+                Object.entries(links).map(([name, url]) => (
+                    <a
+                        class="text-slate-300 hover:text-slate-400 transition-colors text-xl"
+                        href={url}
+                    >
+                        {name}
+                    </a>
+                ))
+            }
+        </div>
     </div>
 </BaseLayout>
 
 <style lang="postcss">
     :global(html) {
-        @apply bg-slate-800
+        @apply bg-slate-600;
+    }
+    :global(body) {
+        @apply p-4 flex min-h-screen;
     }
 </style>
