@@ -1,20 +1,12 @@
 ---
-layout: ../layouts/Md.astro
-title: なんか
+title: osu!
 ---
-## 作ったやつ？
-- [osu!maniaのあれを真ん中にするときのColumnStartを求めるやつ](/mania-centering/index.html)
-- [btoa, atob](/btoa/index.html)
-- [聖遺物の画像からスコア計算するやつ](/genshin-score/index.html)
-
-## osu!
-
-### Link
+## Link
 - [ppy.sh](https://osu.ppy.sh/users/16234052)
 - [mamesosu.net](https://web.mamesosu.net/profile/546)
 - [ppy.sb](https://osu.ppy.sb/user/@ericha)
 
-### Dan
+## Dan
 |     |           |      |
 | --- | --------- | ---- |
 | 4k  | Reform    | 10th |

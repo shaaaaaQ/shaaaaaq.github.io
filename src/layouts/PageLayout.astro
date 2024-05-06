@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import BaseLayout from "@layouts/BaseLayout.astro";
-const { title } = Astro.props.frontmatter;
+const { title } = Astro.props;
 ---
 
 <BaseLayout title={title}>
@@ -10,7 +10,7 @@ const { title } = Astro.props.frontmatter;
     >
         <div class="flex gap-3 items-center">
             <button
-                class="hover:bg-slate-600 p-2 rounded-full"
+                class="hover:bg-slate-600 transition-colors p-2 rounded-full"
                 onclick="history.back()"
             >
                 <Icon name="mdi:arrow-back" size={35} />
