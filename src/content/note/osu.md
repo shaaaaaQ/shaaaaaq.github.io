@@ -11,7 +11,7 @@ title: osu!
 | --- | --------- | ---- |
 | 4k  | Reform    | 10th |
 | 4k  | LN        | 12th |
-| 4k  | Joker     | II   |
+| 4k  | Joker     | III  |
 | 4k  | Malody v3 | Ex-1 |
 | 6k  | Regular   | 6th  |
 | 6k  | LN        | 4th  |
@@ -34,6 +34,7 @@ Mamestagram基準
     - Joker (96%)
         - I (2023/10/08)
         - II (2023/10/09)
+        - III (2023/10/09)
     - Malody v3 (Regular 95%, Extra 96%)
         - Ex-1 (2024/01/03)
 - 6k
