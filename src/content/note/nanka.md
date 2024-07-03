@@ -8,3 +8,4 @@ title: なんか
 - [btoa, atob](/btoa/index.html)
 - [聖遺物の画像からスコア計算するやつ](/genshin-score/index.html)
 - [Minecraft の司書のエンチャント本の理論値チェックリスト](/enchantment-trading-table)
+- [鳴潮のビルドの画像つくるやつ](/wuwa-build/index.html)
