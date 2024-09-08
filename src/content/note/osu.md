@@ -15,7 +15,7 @@ title: osu!
 | 4k  | Malody v3 | Ex-1 |
 | 6k  | Regular   | 6th  |
 | 6k  | LN        | 4th  |
-| 7k  | Regular   | 5th  |
+| 7k  | Regular   | 6th  |
 | 7k  | LN        | 3rd  |
 
 <details>
@@ -49,6 +49,7 @@ Mamestagram基準
         - 2nd (2023/10/03)
         - 4th (2023/10/18)
         - 5th (2024/02/17)
+        - 6th (2024/09/08)
     - LN (95%)
         - 2nd (2023/10/06)
         - 3rd (2023/11/12)
