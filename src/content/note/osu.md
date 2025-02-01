@@ -4,7 +4,7 @@ title: osu!
 ## Link
 - [ppy.sh](https://osu.ppy.sh/users/16234052)
 - [mamesosu.net](https://web.mamesosu.net/profile/546)
-- [ppy.sb](https://osu.ppy.sb/user/@ericha)
+- [ppy.sb](https://osu.ppy.sb/u/6437)
 
 ## Dan
 |     |           |      |
