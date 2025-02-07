@@ -16,7 +16,7 @@ title: osu!
 | 6k  | Regular   | 6th  |
 | 6k  | LN        | 4th  |
 | 7k  | Regular   | 6th  |
-| 7k  | LN        | 4th  |
+| 7k  | LN        | 5th  |
 
 <details>
 <summary>詳細</summary>
@@ -54,4 +54,5 @@ Mamestagram基準
         - 2nd (2023/10/06)
         - 3rd (2023/11/12)
         - 4th (2024/12/25)
+        - 5th (2025/02/07)
 </details>
