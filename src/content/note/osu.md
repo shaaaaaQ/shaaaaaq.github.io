@@ -9,7 +9,7 @@ title: osu!
 ## Dan
 |     |           |      |
 | --- | --------- | ---- |
-| 4k  | Reform    | 10th |
+| 4k  | Reform    | α    |
 | 4k  | LN        | 12th |
 | 4k  | Joker     | III  |
 | 4k  | Malody v3 | Ex-1 |
@@ -26,6 +26,7 @@ Mamestagram基準
     - Reform (96%)
         - 9th (2023/09/09)
         - 10th (2023/10/02)
+        - ALPHA (2025/02/10)
     - LN (97% +V2)
         - 9th (2023/10/03)
         - 10th (2023/12/02)
