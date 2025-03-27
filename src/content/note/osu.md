@@ -1,12 +1,30 @@
 ---
 title: osu!
 ---
-## Link
+### Link
 - [ppy.sh](https://osu.ppy.sh/users/16234052)
 - [mamesosu.net](https://web.mamesosu.net/profile/546)
 - [ppy.sb](https://osu.ppy.sb/u/6437)
 
-## Dan
+### デバイスとか
+Keyboard: ROCCAT Vulcan TKL Pro  
+Tablet: XP-Pen Star G640  
+[Tablet Settings](https://gist.github.com/shaaaaaQ/43649168f4965ae9a9963df9c0153de7)  
+[Skin](https://www.dropbox.com/scl/fi/e1qw0mbmcalsi36vbml30/Mix-v4.0.osk?rlkey=lv1yeptkolcysxo2x0tx4219n&st=tlleq6hq&dl=0)  
+
+### KeyBind
+std: `z` `x`  
+taiko: `z` `x` `↓` `→` (kddk)  
+catch: Dash=`x` Left=`↓` Right=`→`  
+mania  
+- 4k: `z` `x` `↓` `→`
+- 5k: `z` `x` `←` `↓` `→` or `f` `g` `Space` `l` `;`
+- 6k: `z` `x` `c` `←` `↓` `→`
+- 7k: `d` `f` `g` `Space` `l` `;` `'`
+- 8k: `Shift` `a` `s` `d` `Space` `l` `;` `'`
+- 10k: `CapsLock` `q` `w` `e` `v` `m` `o` `p` `[` `Enter`
+
+### Dan
 |     |           |      |
 | --- | --------- | ---- |
 | 4k  | Reform    | α    |

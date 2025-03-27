@@ -6,7 +6,7 @@ const { title } = Astro.props;
 
 <BaseLayout title={title}>
     <div
-        class="bg-slate-700 text-slate-300 max-w-[50rem] mx-auto p-3 h-screen border-solid border-x-2 border-slate-800 overflow-y-auto scrollbar scrollbar-thumb-slate-600 scrollbar-track-transparent"
+        class="bg-slate-700 text-slate-300 max-w-[50rem] mx-auto p-3 h-screen overflow-y-auto scrollbar shadow-2xl scrollbar-thumb-slate-600 scrollbar-track-transparent"
     >
         <div class="flex gap-3 items-center">
             <button
@@ -37,6 +37,9 @@ const { title } = Astro.props;
     h3 {
         @apply text-2xl font-bold my-3;
     }
+    h4 {
+        @apply text-xl font-bold my-3;
+    }
     a {
         @apply hover:text-slate-400 transition-colors underline;
     }
@@ -48,5 +51,8 @@ const { title } = Astro.props;
     }
     td {
         @apply px-2 py-1;
+    }
+    code {
+        @apply bg-slate-800 text-slate-200 px-1 py-0.5 rounded;
     }
 </style>
