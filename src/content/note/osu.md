@@ -10,7 +10,6 @@ title: osu!
 Keyboard: ROCCAT Vulcan TKL Pro  
 Tablet: XP-Pen Star G640  
 [Tablet Settings](https://gist.github.com/shaaaaaQ/43649168f4965ae9a9963df9c0153de7)  
-[Skin](https://www.dropbox.com/scl/fi/e1qw0mbmcalsi36vbml30/Mix-v4.0.osk?rlkey=lv1yeptkolcysxo2x0tx4219n&st=tlleq6hq&dl=0)  
 
 ### KeyBind
 std: `z` `x`  
