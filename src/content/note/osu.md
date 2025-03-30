@@ -20,7 +20,8 @@ mania
 - 5k: `z` `x` `←` `↓` `→` or `f` `g` `Space` `l` `;`
 - 6k: `z` `x` `c` `←` `↓` `→`
 - 7k: `d` `f` `g` `Space` `l` `;` `'`
-- 8k: `Shift` `a` `s` `d` `Space` `l` `;` `'`
+- 8k: `LShift` `a` `s` `d` `Space` `l` `;` `'`
+- 9k: `LShift` `a` `s` `d` `Space` `l` `;` `'` `RShift`
 - 10k: `CapsLock` `q` `w` `e` `v` `m` `o` `p` `[` `Enter`
 
 ### Dan
