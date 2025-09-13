@@ -7,7 +7,7 @@ title: osu!
 - [ppy.sb](https://osu.ppy.sb/u/6437)
 
 ### デバイスとか
-Keyboard: ROCCAT Vulcan TKL Pro  
+Keyboard: K-ONE 80  
 Tablet: XP-Pen Star G640  
 [Tablet Settings](https://gist.github.com/shaaaaaQ/43649168f4965ae9a9963df9c0153de7)  
 
