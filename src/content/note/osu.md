@@ -32,7 +32,7 @@ mania
 | 4k  | Joker     | III  |
 | 4k  | Malody v3 | Ex-1 |
 | 6k  | Regular   | 6th  |
-| 6k  | LN        | 4th  |
+| 6k  | LN        | 5th  |
 | 7k  | Regular   | 7th  |
 | 7k  | LN        | 5th  |
 
@@ -63,6 +63,7 @@ Mamestagram基準
         - 6th (2024/05/18)
     - LN (95%)
         - 4th (2024/03/31)
+        - 5th (2026/05/03)
 - 7k
     - Regular (96%)
         - 2nd (2023/10/03)
