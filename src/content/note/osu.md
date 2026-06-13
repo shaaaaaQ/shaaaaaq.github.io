@@ -7,10 +7,9 @@ title: osu!
 - [ppy.sb](https://osu.ppy.sb/u/6437)
 
 ### デバイスとか
-Keyboard: ROCCAT Vulcan TKL Pro  
+Keyboard: K-ONE 80  
 Tablet: XP-Pen Star G640  
 [Tablet Settings](https://gist.github.com/shaaaaaQ/43649168f4965ae9a9963df9c0153de7)  
-[Skin](https://www.dropbox.com/scl/fi/e1qw0mbmcalsi36vbml30/Mix-v4.0.osk?rlkey=lv1yeptkolcysxo2x0tx4219n&st=tlleq6hq&dl=0)  
 
 ### KeyBind
 std: `z` `x`  
@@ -21,7 +20,8 @@ mania
 - 5k: `z` `x` `←` `↓` `→` or `f` `g` `Space` `l` `;`
 - 6k: `z` `x` `c` `←` `↓` `→`
 - 7k: `d` `f` `g` `Space` `l` `;` `'`
-- 8k: `Shift` `a` `s` `d` `Space` `l` `;` `'`
+- 8k: `LShift` `a` `s` `d` `Space` `l` `;` `'`
+- 9k: `LShift` `a` `s` `d` `Space` `l` `;` `'` `RShift`
 - 10k: `CapsLock` `q` `w` `e` `v` `m` `o` `p` `[` `Enter`
 
 ### Dan
@@ -32,7 +32,7 @@ mania
 | 4k  | Joker     | III  |
 | 4k  | Malody v3 | Ex-1 |
 | 6k  | Regular   | 6th  |
-| 6k  | LN        | 4th  |
+| 6k  | LN        | 5th  |
 | 7k  | Regular   | 7th  |
 | 7k  | LN        | 5th  |
 
@@ -63,6 +63,7 @@ Mamestagram基準
         - 6th (2024/05/18)
     - LN (95%)
         - 4th (2024/03/31)
+        - 5th (2026/05/03)
 - 7k
     - Regular (96%)
         - 2nd (2023/10/03)
