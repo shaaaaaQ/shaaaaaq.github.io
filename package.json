@@ -22,5 +22,6 @@
     "eslint": "^9.2.0",
     "eslint-plugin-astro": "^1.1.2",
     "tailwind-scrollbar": "^3.1.0"
-  }
+  },
+  "packageManager": "pnpm@11.6.0"
 }
