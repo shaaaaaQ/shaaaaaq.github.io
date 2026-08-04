@@ -5,6 +5,7 @@ title: osu!
 - [ppy.sh](https://osu.ppy.sh/users/16234052)
 - [mamesosu.net](https://web.mamesosu.net/profile/546)
 - [ppy.sb](https://osu.ppy.sb/u/6437)
+- [yomimania](https://yomimania.f5.si/u/65)
 
 ### デバイスとか
 Keyboard: K-ONE 80  
