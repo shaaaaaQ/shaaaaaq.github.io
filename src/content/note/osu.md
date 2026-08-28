@@ -8,7 +8,7 @@ title: osu!
 - [yomimania](https://yomimania.f5.si/u/65)
 
 ### デバイスとか
-Keyboard: K-ONE 80  
+Keyboard: MCHOSE Mix 87  
 Tablet: XP-Pen Star G640  
 [Tablet Settings](https://gist.github.com/shaaaaaQ/43649168f4965ae9a9963df9c0153de7)  
 
