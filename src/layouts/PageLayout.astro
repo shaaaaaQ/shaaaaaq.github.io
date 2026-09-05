@@ -21,7 +21,9 @@ const { title } = Astro.props;
     </div>
 </BaseLayout>
 
-<style lang="postcss" is:global>
+<style is:global>
+    @reference "tailwindcss";
+
     html {
         @apply bg-slate-600 h-screen;
     }

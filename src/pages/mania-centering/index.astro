@@ -70,17 +70,19 @@ import BaseLayout from "@layouts/BaseLayout.astro";
     </script>
 </BaseLayout>
 
-<style lang="postcss">
+<style>
+    @reference "tailwindcss";
+
     :global(html) {
-        @apply bg-slate-800
+        @apply bg-slate-800;
     }
     .e {
-        @apply border border-solid border-red-500
+        @apply border border-solid border-red-500;
     }
     * {
-        @apply text-white
+        @apply text-white;
     }
     input {
-        @apply bg-slate-500 p-2 rounded-md focus-visible:outline-none
+        @apply bg-slate-500 p-2 rounded-md focus-visible:outline-none;
     }
 </style>

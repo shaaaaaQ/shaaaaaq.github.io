@@ -41,23 +41,26 @@ import BaseLayout from "@layouts/BaseLayout.astro";
             output.classList.add("e");
         }
     }
+    a();
     </script>
 </BaseLayout>
 
-<style lang="postcss">
+<style>
+    @reference "tailwindcss";
+
     :global(html) {
-        @apply bg-slate-800
+        @apply bg-slate-800;
     }
     * {
-        @apply text-white
+        @apply text-white;
     }
     textarea {
-        @apply block p-2 rounded-md w-full max-w-[40rem] h-[15rem] bg-slate-500 focus-visible:outline-none
+        @apply block p-2 rounded-md w-full max-w-[40rem] h-[15rem] bg-slate-500 focus-visible:outline-none;
     }
     .e {
-        @apply text-red-500
+        @apply text-red-500;
     }
-    input:checked+div {
-        @apply border-b-2 border-solid border-blue-400
+    input:checked + div {
+        @apply border-b-2 border-solid border-blue-400;
     }
 </style>
