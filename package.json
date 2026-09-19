@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "check": "astro check",
     "preview": "astro preview",
     "lint": "eslint ."
   },
@@ -20,11 +21,13 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "@eslint/js": "^10.0.1",
     "@tailwindcss/typography": "^0.5.20",
+    "@typescript-eslint/parser": "^8.70.0",
     "eslint": "^10.9.1",
     "eslint-plugin-astro": "^3.1.0",
-    "tailwind-scrollbar": "^4.0.2"
+    "typescript": "^6.0.3"
   },
   "packageManager": "pnpm@11.25.0"
 }

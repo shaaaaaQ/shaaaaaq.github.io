@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/PageLayout.astro";
+
+const notes = (await getCollection("note", ({ data }) => !data.draft)).sort(
+    (a, b) =>
+        (b.data.updatedAt?.getTime() ?? 0) -
+            (a.data.updatedAt?.getTime() ?? 0) ||
+        a.data.title.localeCompare(b.data.title, "ja"),
+);
+---
+
+<Layout title="メモとか">
+    <ul class="space-y-3">
+        {
+            notes.map((note) => (
+                <li>
+                    <a
+                        class="text-lg underline transition-colors hover:text-slate-400"
+                        href={`/notes/${note.id}/`}
+                    >
+                        {note.data.title}
+                    </a>
+                    {note.data.description && (
+                        <p class="mt-1 text-sm text-slate-400">
+                            {note.data.description}
+                        </p>
+                    )}
+                    {note.data.updatedAt && (
+                        <time
+                            class="mt-1 block text-sm text-slate-400"
+                            datetime={note.data.updatedAt.toISOString()}
+                        >
+                            {note.data.updatedAt.toLocaleDateString("ja-JP")}
+                        </time>
+                    )}
+                </li>
+            ))
+        }
+    </ul>
+</Layout>

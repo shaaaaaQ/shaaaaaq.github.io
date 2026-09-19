@@ -1,14 +1,26 @@
 ---
 import '../styles/global.css';
+import { SITE } from "../consts";
 
-const { title } = Astro.props;
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title, description = SITE.description } = Astro.props;
+const pageTitle = title && title !== SITE.name ? `${title} | ${SITE.name}` : SITE.name;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
-<html>
+<html lang="ja">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{title || ''}</title>
+        <meta name="description" content={description} />
+        <meta name="theme-color" content="#334155" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="canonical" href={canonicalURL} />
+        <title>{pageTitle}</title>
         <slot name="head" />
     </head>
     <body>

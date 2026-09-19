@@ -1,47 +1,36 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-const links = {
-    Twitter: "https://twitter.com/sfx_as",
-    GitHub: "https://github.com/shaaaaaQ",
-    "Misskey.io": "https://misskey.io/@sfx__as",
-    "切腹🔑": "https://msk.seppuku.club/@sh",
-    "osu!": "https://osu.ppy.sh/users/16234052",
-    "📝": "/notes",
-};
+import { PROFILE_LINKS, SITE } from "../consts";
 ---
 
-<BaseLayout title="sh">
-    <div
-        class="flex flex-col bg-slate-700 w-fit h-fit items-center rounded-md shadow-2xl m-auto p-16 gap-10"
-    >
-        <img
-            class="rounded-full"
-            width="120"
-            height="120"
-            src="/icons/2.png"
-        />
-        <div class="flex flex-col gap-3">
-            {
-                Object.entries(links).map(([name, url]) => (
-                    <a
-                        class="text-slate-300 hover:opacity-70 transition-opacity text-xl"
-                        href={url}
-                    >
-                        {name}
-                    </a>
-                ))
-            }
+<BaseLayout title={SITE.name}>
+    <main class="flex min-h-dvh p-4">
+        <div
+            class="m-auto flex h-fit w-fit flex-col items-center gap-10 rounded-md bg-slate-700 p-8 shadow-2xl sm:p-16"
+        >
+            <img
+                class="rounded-full"
+                width="120"
+                height="120"
+                src="/icons/2.png"
+                alt="shaaaaaQのアイコン"
+            />
+            <nav aria-label="プロフィールリンク">
+                <ul class="flex flex-col gap-3">
+                    {
+                        PROFILE_LINKS.map(({ label, href }) => (
+                            <li>
+                                <a
+                                    class="text-xl text-slate-300 transition-opacity hover:opacity-70"
+                                    href={href}
+                                >
+                                    {label}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
         </div>
-    </div>
+    </main>
 </BaseLayout>
-
-<style>
-    @reference "tailwindcss";
-
-    :global(html) {
-        @apply bg-slate-600;
-    }
-    :global(body) {
-        @apply p-4 flex min-h-screen;
-    }
-</style>
