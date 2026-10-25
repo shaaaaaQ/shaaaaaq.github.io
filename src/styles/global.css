@@ -13,4 +13,17 @@
     :focus-visible {
         @apply outline-2 outline-offset-2 outline-sky-400;
     }
+
+    html[data-theme='neutral'] {
+        background: #181818;
+        color-scheme: dark;
+    }
+
+    html[data-theme='neutral'] body {
+        color: #d4d4d4;
+    }
+
+    html[data-theme='neutral'] :focus-visible {
+        outline-color: #d4d4d4;
+    }
 }

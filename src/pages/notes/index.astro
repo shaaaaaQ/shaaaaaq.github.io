@@ -16,19 +16,19 @@ const notes = (await getCollection("note", ({ data }) => !data.draft)).sort(
             notes.map((note) => (
                 <li>
                     <a
-                        class="text-lg underline transition-colors hover:text-slate-400"
+                        class="text-lg underline underline-offset-4 transition-colors hover:text-neutral-100"
                         href={`/notes/${note.id}/`}
                     >
                         {note.data.title}
                     </a>
                     {note.data.description && (
-                        <p class="mt-1 text-sm text-slate-400">
+                        <p class="mt-1 text-sm text-neutral-400">
                             {note.data.description}
                         </p>
                     )}
                     {note.data.updatedAt && (
                         <time
-                            class="mt-1 block text-sm text-slate-400"
+                            class="mt-1 block text-sm text-neutral-400"
                             datetime={note.data.updatedAt.toISOString()}
                         >
                             {note.data.updatedAt.toLocaleDateString("ja-JP")}
