@@ -13,17 +13,17 @@ Tablet: XP-Pen Star G640
 [Tablet Settings](https://gist.github.com/shaaaaaQ/43649168f4965ae9a9963df9c0153de7)  
 
 ### KeyBind
-std: `z` `x`  
-taiko: `z` `x` `↓` `→` (kddk)  
-catch: Dash=`x` Left=`↓` Right=`→`  
+std: <kbd>z</kbd> <kbd>x</kbd>\
+taiko: <kbd>z</kbd> <kbd>x</kbd> <kbd>↓</kbd> <kbd>→</kbd> (kddk)\
+catch: Dash=<kbd>x</kbd> Left=<kbd>↓</kbd> Right=<kbd>→</kbd>\
 mania  
-- 4k: `z` `x` `↓` `→`
-- 5k: `z` `x` `←` `↓` `→` or `f` `g` `Space` `l` `;`
-- 6k: `z` `x` `c` `←` `↓` `→`
-- 7k: `d` `f` `g` `Space` `l` `;` `'`
-- 8k: `LShift` `a` `s` `d` `Space` `l` `;` `'`
-- 9k: `LShift` `a` `s` `d` `Space` `l` `;` `'` `RShift`
-- 10k: `CapsLock` `q` `w` `e` `v` `m` `o` `p` `[` `Enter`
+- 4k: <kbd>z</kbd> <kbd>x</kbd> <kbd>↓</kbd> <kbd>→</kbd>
+- 5k: <kbd>z</kbd> <kbd>x</kbd> <kbd>←</kbd> <kbd>↓</kbd> <kbd>→</kbd> or <kbd>f</kbd> <kbd>g</kbd> <kbd>Space</kbd> <kbd>l</kbd> <kbd>;</kbd>
+- 6k: <kbd>z</kbd> <kbd>x</kbd> <kbd>c</kbd> <kbd>←</kbd> <kbd>↓</kbd> <kbd>→</kbd>
+- 7k: <kbd>d</kbd> <kbd>f</kbd> <kbd>g</kbd> <kbd>Space</kbd> <kbd>l</kbd> <kbd>;</kbd> <kbd>'</kbd>
+- 8k: <kbd>LShift</kbd> <kbd>a</kbd> <kbd>s</kbd> <kbd>d</kbd> <kbd>Space</kbd> <kbd>l</kbd> <kbd>;</kbd> <kbd>'</kbd>
+- 9k: <kbd>LShift</kbd> <kbd>a</kbd> <kbd>s</kbd> <kbd>d</kbd> <kbd>Space</kbd> <kbd>l</kbd> <kbd>;</kbd> <kbd>'</kbd> <kbd>RShift</kbd>
+- 10k: <kbd>CapsLock</kbd> <kbd>q</kbd> <kbd>w</kbd> <kbd>e</kbd> <kbd>v</kbd> <kbd>m</kbd> <kbd>o</kbd> <kbd>p</kbd> <kbd>[</kbd> <kbd>Enter</kbd>
 
 ### Dan
 |     |           |      |
